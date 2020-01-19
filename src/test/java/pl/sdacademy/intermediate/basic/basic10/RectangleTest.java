@@ -65,22 +65,17 @@ public class RectangleTest {
     public void testUpdateWidthwithCorrectValue() {
         rectangle.updateWidth(20);
         Assert.assertEquals(20, rectangle.getWidth());
-        rectangle.updateWidth(-1);
-        Assert.assertNotEquals(-1, rectangle.getWidth());
-        Assert.assertEquals(20, rectangle.getWidth());
     }
 
     @Test
     public void testDoesntUpdateHeightWithNegativeValue() {
         rectangle.updateHeight(-1);
-        Assert.assertNotEquals(-1, rectangle.getHeight());
         Assert.assertEquals(5, rectangle.getHeight());
     }
 
     @Test
     public void testDoesntUpdateWidthWithNegativeValue() {
         rectangle.updateWidth(-1);
-        Assert.assertNotEquals(-1, rectangle.getWidth());
         Assert.assertEquals(3, rectangle.getWidth());
     }
 

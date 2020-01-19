@@ -51,12 +51,15 @@ class BookFilterCriteria {
 
         boolean match = true;
 
-        if (yearsRange != null && !yearsRange.contains(book.getYearPushlished()))
+        if (yearsRange != null && !(yearsRange.contains(book.getYearPushlished())))
             match = false;
-        if (pagesRange != null && !pagesRange.contains(book.getYearPushlished()))
+        System.out.println("Match 1 " + match);
+        if (pagesRange != null && !(pagesRange.contains(book.getNumberOfPages())))
             match = false;
-        if (priceRange != null && !priceRange.contains(book.getPrice()))
+        System.out.println("Match 2 " + match);
+        if (priceRange != null && !(priceRange.contains(book.getPrice())))
             match = false;
+        System.out.println("Match 3 " + match);
 
         return match && book.getTitle().toLowerCase().contains(titlePart.toLowerCase()) && book.getAuthor().toLowerCase().contains(authorPart.toLowerCase());
     }
