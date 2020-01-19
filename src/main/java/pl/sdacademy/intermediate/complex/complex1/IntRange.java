@@ -6,6 +6,6 @@ class IntRange {
     private int min;
 
     boolean contains (int num){
-        return num > min && num < max;
+        return num >= min && num <= max;
     }
 }

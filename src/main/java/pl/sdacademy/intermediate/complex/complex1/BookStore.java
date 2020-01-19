@@ -19,37 +19,37 @@ class BookStore {
         this.books = new BookStoreInitializer().initBookStore();
     }
 
-    List<Book> getBooksByAuthor(String author){
+    List<Book> findBooksByAuthor(String author) {
         return books.stream()
                 .filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
     }
 
-    List<Book> getBooksByTitle(String title){
+    List<Book> findBooksByTitle(String title) {
         return books.stream()
                 .filter(book -> book.getTitle().equals(title))
                 .collect(Collectors.toList());
     }
 
-    List<Book> getBooksByPublishedYear(int year){
+    List<Book> findBooksByPublishedYear(int year) {
         return books.stream()
                 .filter(book -> book.getYearPushlished() == year)
                 .collect(Collectors.toList());
     }
 
-    List<Book> getBooksByNumberOfPages(int numberOfPages){
+    List<Book> findBooksByNumberOfPages(int numberOfPages) {
         return books.stream()
                 .filter(book -> book.getNumberOfPages() == numberOfPages)
                 .collect(Collectors.toList());
     }
 
-    List<Book> getBooksByPrice(double price){
+    List<Book> findBooksByPrice(double price) {
         return books.stream()
                 .filter(book -> book.getPrice() == price)
                 .collect(Collectors.toList());
     }
 
-    List<Book> getBooksByGenre(String genre){
+    List<Book> findBooksByGenre(String genre) {
         return books.stream()
                 .filter(book -> book.getType().equals(Genre.valueOf(genre)))
                 .collect(Collectors.toList());
@@ -64,12 +64,12 @@ class BookStore {
         System.out.println("Title");
         filter.setTitlePart(scr.next());
 
-        return getBooksByPartialNameAndPartialAuthor();
+        return findBooksByPartialNameAndPartialAuthor();
 
 
     }
 
-    List<Book> getBooksByPartialNameAndPartialAuthor(){
+    List<Book> findBooksByPartialNameAndPartialAuthor() {
 
         return books.stream()
                 .filter(book -> filter

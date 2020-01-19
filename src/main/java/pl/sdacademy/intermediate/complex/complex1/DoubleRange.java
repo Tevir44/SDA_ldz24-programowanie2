@@ -5,6 +5,6 @@ class DoubleRange {
     private double min;
 
     boolean contains (double num){
-        return num > min && num < max;
+        return num >= min && num <= max;
     }
 }
