@@ -1,7 +1,9 @@
 package pl.sdacademy.intermediate.basic.basic9;
 
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Basic9Streams {
@@ -76,8 +78,10 @@ public class Basic9Streams {
         }
 
         System.out.println("Another version of finding max " + anotherMax(list));
-
         dictinctNumbers(list);
+
+
+        System.out.println("Hello World");
 
 
 
