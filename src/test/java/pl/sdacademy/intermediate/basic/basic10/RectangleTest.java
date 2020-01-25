@@ -6,6 +6,11 @@ public class RectangleTest {
 
     private Rectangle rectangle;
 
+    private static final int DEFAULT_WIDTH = 3;
+    private static final int DEFAULT_HEIGHT = 5;
+    private static final int DEFAULT_AREA = 15;
+    private static final int DEFAULT_PERIMETER = 16;
+
     @BeforeClass
     public static void setUpClass() {
         System.out.println("Starting RectangleTest");
@@ -19,7 +24,7 @@ public class RectangleTest {
 
     @Before
     public void setUp() {
-        rectangle = new Rectangle(3, 5);
+        rectangle = new Rectangle(DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
     @After
@@ -30,27 +35,27 @@ public class RectangleTest {
 
     @Test
     public void testGetWidth() {
-        Assert.assertEquals(3, rectangle.getWidth());
+        Assert.assertEquals(DEFAULT_WIDTH, rectangle.getWidth());
     }
 
     @Test
     public void getHeight() {
-        Assert.assertEquals(5, rectangle.getHeight());
+        Assert.assertEquals(DEFAULT_HEIGHT, rectangle.getHeight());
     }
 
     @Test
     public void testCalculateArea() {
-        Assert.assertEquals(15, rectangle.calculateArea());
+        Assert.assertEquals(DEFAULT_AREA, rectangle.calculateArea());
     }
 
     @Test
     public void testCalculatePerimeter() {
-        Assert.assertEquals(16, rectangle.calculatePerimeter());
+        Assert.assertEquals(DEFAULT_PERIMETER, rectangle.calculatePerimeter());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testThrowExceptionOnIncorrectValuesInConstructor() {
-        rectangle = new Rectangle(-1, 10);
+        rectangle = new Rectangle(-1, DEFAULT_HEIGHT);
     }
 
 
@@ -70,13 +75,13 @@ public class RectangleTest {
     @Test
     public void testDoesntUpdateHeightWithNegativeValue() {
         rectangle.updateHeight(-1);
-        Assert.assertEquals(5, rectangle.getHeight());
+        Assert.assertEquals(DEFAULT_HEIGHT, rectangle.getHeight());
     }
 
     @Test
     public void testDoesntUpdateWidthWithNegativeValue() {
         rectangle.updateWidth(-1);
-        Assert.assertEquals(3, rectangle.getWidth());
+        Assert.assertEquals(DEFAULT_WIDTH, rectangle.getWidth());
     }
 
 
